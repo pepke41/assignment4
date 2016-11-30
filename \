@@ -17,7 +17,6 @@
   $('.flexsearch-input').keyup(function(e) {
     var searchText = $('.flexsearch-input').val();
     $('.results').html("")
-    $('.results').css("border-color", "white");
     getJSON(searchText);
   });
 
@@ -33,8 +32,7 @@
       info.data.forEach(function(e) {
         e = e.toLowerCase();
         if(e.startsWith(text) && text.length > 0) {
-          $('.results').append('<a target="_blank" href=' + googleSearchBase + e.replace(' ', '%20') + '>' + e + '</a><br>');
-          $('.results').css("border-color", "purple");
+          $('.results').append('<a target="_blank" href=' + googleSearchBase + e + '>' + e + '</a>');
         }
       });
     });
